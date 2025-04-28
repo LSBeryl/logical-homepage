@@ -1,0 +1,22 @@
+{
+  "name": "gongil",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@supabase/supabase-js": "^2.49.4",
+    "axios": "^1.8.4",
+    "framer-motion": "^12.7.4",
+    "next": "^15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
