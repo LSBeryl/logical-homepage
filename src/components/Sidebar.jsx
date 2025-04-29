@@ -15,7 +15,7 @@ const dimStyle = css`
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 999; /* Sidebar보다 아래 */
+  z-index: 999;
 `;
 
 const sidebarStyle = css`
