@@ -47,14 +47,37 @@ export default function Sector7() {
     <Wrapper>
       <MapCon>
         <Title>오시는 길</Title>
+        <TransportCon>
+          <div>
+            <div>
+              <img src="/bus.png" alt="/bus.png" />
+            </div>
+            <div>
+              <div>버스</div>
+              <div>폴리타운 / 에이스 프라자 정류장 도보 1분</div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <img src="/subway.png" alt="/bus.png" />
+            </div>
+            <div>
+              <div>지하철</div>
+              <div>고잔역 / 중앙역 도보 26분</div>
+            </div>
+          </div>
+        </TransportCon>
         <MapDivCon>
           <MapDiv id="map"></MapDiv>
           <MapDisc>
             <div>로지컬수학학원</div>
             <div>경기도 안산시 단원구 광덕대로 130 508호</div>
             <div>
-              ※ 대중교통 이용 및 주차장 안내는{" "}
-              <Blog href="https://blog.naver.com/logical_math/223613662438">
+              ※ 자세한 안내는{" "}
+              <Blog
+                href="https://blog.naver.com/logical_math/223613662438"
+                target="_blank"
+              >
                 로지컬 블로그
               </Blog>
               를 참조해주세요.
@@ -86,8 +109,51 @@ const MapCon = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
+`;
+
+const TransportCon = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  & > div {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    & > div {
+      &:nth-of-type(1) {
+        width: 5rem;
+        height: 5rem;
+        padding: 1rem;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        background: #ddd;
+        & > img {
+          height: 3rem;
+        }
+      }
+      &:nth-of-type(2) {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        & > div {
+          &:nth-of-type(1) {
+            font-size: 1.1rem;
+            font-weight: 700;
+          }
+          &:nth-of-type(2) {
+            font-size: 1.1rem;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
 `;
 
 const MapDivCon = styled.div`
