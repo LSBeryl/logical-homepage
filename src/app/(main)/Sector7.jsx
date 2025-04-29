@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 "use client";
 
-import Script from "next/script";
 import styled from "@emotion/styled";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -10,27 +9,42 @@ import { useEffect } from "react";
  * 오시는 길 - Sector #7
  */
 export default function Sector7() {
+  useEffect(() => {
+    // 다른 경로로 나갔다가 올 시 지도 사라지는 이슈 방지용 useEffect
+    const scriptId = "naver-map-script";
+    const existingScript = document.getElementById(scriptId);
+
+    // 이미 있는 스크립트 제거
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    // 새 스크립트 생성 및 추가
+    const script = document.createElement("script");
+    script.id = scriptId;
+    script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NEXT_PUBLIC_NAVER_CLIENT_ID}`;
+    script.async = true;
+    script.onload = () => {
+      console.log("Naver Map Script loaded (manual)");
+
+      const LatLng = new window.naver.maps.LatLng(37.308107, 126.830651);
+
+      const map = new window.naver.maps.Map("map", {
+        center: LatLng,
+        zoom: 17,
+      });
+
+      new window.naver.maps.Marker({
+        position: LatLng,
+        map,
+      });
+    };
+
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <Wrapper>
-      <Script
-        src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NEXT_PUBLIC_NAVER_CLIENT_ID}`}
-        strategy="afterInteractive"
-        onLoad={() => {
-          console.log("Naver Map Script loaded!");
-
-          const LatLng = new naver.maps.LatLng(37.308107, 126.830651);
-
-          const map = new window.naver.maps.Map("map", {
-            center: LatLng,
-            zoom: 17,
-          });
-
-          new naver.maps.Marker({
-            position: LatLng,
-            map: map,
-          });
-        }}
-      />
       <MapCon>
         <Title>오시는 길</Title>
         <MapDivCon>
@@ -106,7 +120,6 @@ const MapDisc = styled.div`
 `;
 
 const MapDiv = styled.div`
-  /* background: url("https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5827%2F2025%2F04%2F22%2F0000100938_002_20250422134411212.jpg&type=sc960_832"); */
   width: 100%;
   height: 500px;
 
