@@ -5,8 +5,9 @@ import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { usePathname, useSearchParams } from "next/navigation";
 import { theme } from "../styles/theme";
+import { Suspense } from "react";
 
-export default function ClientLayout({ children }) {
+function ProgressBar() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -25,13 +26,21 @@ export default function ClientLayout({ children }) {
   }, [pathname, searchParams]);
 
   return (
+    <style jsx global>{`
+      #nprogress .bar {
+        background: ${theme.colors.primary} !important;
+        height: 0.2rem !important;
+      }
+    `}</style>
+  );
+}
+
+export default function ClientLayout({ children }) {
+  return (
     <>
-      <style jsx global>{`
-        #nprogress .bar {
-          background: ${theme.colors.primary} !important;
-          height: 0.2rem !important;
-        }
-      `}</style>
+      <Suspense fallback={null}>
+        <ProgressBar />
+      </Suspense>
       {children}
     </>
   );
