@@ -108,12 +108,12 @@ const Wrapper = styled.div`
   top: 0;
   height: 4.5rem;
   padding: 0 2rem;
-  box-shadow: 0px 0px 5px #959595;
+  box-shadow: 0px 0px 5px ${({ theme }) => theme.colors.shadow.light};
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 999;
-  background: #fff;
+  background: ${({ theme }) => theme.colors.background.white};
 
   & > div:nth-of-type(1) {
     // 헤더 왼쪽(아이콘, 메뉴)
@@ -145,7 +145,7 @@ const MenuCon = styled.div`
 `;
 
 const Menu = styled.div`
-  color: #000;
+  color: ${({ theme }) => theme.colors.text.black};
   text-decoration: none;
   height: 100%;
   display: flex;
@@ -156,7 +156,7 @@ const Menu = styled.div`
   border-bottom: 2px solid transparent;
   & > a {
     cursor: pointer;
-    color: #000;
+    color: ${({ theme }) => theme.colors.text.black};
     text-decoration: none;
   }
   &:hover {
@@ -177,9 +177,9 @@ const SubMenu = styled.div`
   display: flex;
   gap: 1rem;
   width: 100%;
-  background: #ffffff;
-  border-top: 1px solid #d1d1d1;
-  border-bottom: 1px solid #d1d1d1;
+  background: ${({ theme }) => theme.colors.background.white};
+  border-top: 1px solid ${({ theme }) => theme.colors.border.light};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border.light};
   position: absolute;
   box-sizing: border-box;
   top: 4.5rem;
@@ -187,7 +187,7 @@ const SubMenu = styled.div`
   padding: 1.5rem 5rem;
 
   & > * {
-    color: #000;
+    color: ${({ theme }) => theme.colors.text.black};
     text-decoration: none;
     z-index: 10000;
     &:hover {
@@ -213,11 +213,11 @@ const Dashboard = styled.div`
 
 const Welcome = styled.div`
   font-size: 0.9rem;
-  color: #7e7e7e;
+  color: ${({ theme }) => theme.colors.text.gray};
 `;
 
 const Name = styled.span`
-  color: #000;
+  color: ${({ theme }) => theme.colors.text.black};
   font-weight: 600;
 `;
 
@@ -233,25 +233,25 @@ const Sign = styled.div`
 const Signin = styled(Link)`
   font-size: 0.9rem;
   font-weight: 500;
-  color: #000;
+  color: ${({ theme }) => theme.colors.text.black};
   text-decoration: none;
 `;
 
 const Signout = styled.div`
   font-size: 0.9rem;
   font-weight: 600;
-  color: #000;
+  color: ${({ theme }) => theme.colors.text.black};
   cursor: pointer;
 `;
 
 const Signup = styled(Link)`
   font-size: 0.9rem;
   font-weight: 500;
-  color: #000;
+  color: ${({ theme }) => theme.colors.text.black};
   text-decoration: none;
   padding: 0.5rem !important;
   border-radius: 4px;
-  border: 1px solid #d1d1d1;
+  border: 1px solid ${({ theme }) => theme.colors.border.light};
 `;
 
 const PCRight = styled.div`

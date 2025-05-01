@@ -6,7 +6,7 @@ import Link from "next/link";
 import { css, ThemeProvider } from "@emotion/react";
 import { theme } from "../../styles/theme";
 
-export default function SectorMenu({ curSector, setCurSector }) {
+export default function SectorMenu({ curSector, setSector }) {
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
@@ -14,8 +14,11 @@ export default function SectorMenu({ curSector, setCurSector }) {
           <SectorMenuLink
             href={v[1]}
             key={i}
+            onClick={() => {
+              setSector(i);
+            }}
             style={{
-              borderBottom: curSector === i && "2px solid #000",
+              borderBottom: curSector - 1 === i && "3px solid #082870",
             }}
           >
             {v[0]}
@@ -40,20 +43,22 @@ const Wrapper = styled.div`
   border-bottom: 1px solid #d1d1d1;
   background: #fff;
   z-index: 1;
-  & > a {
-    color: #000;
-    text-decoration: none;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-  }
 
   @media (max-width: 900px) {
     padding: 0 2rem;
-    overflow-x: scroll;
+    height: 2.5rem;
     overflow-y: hidden;
   }
 `;
 
-const SectorMenuLink = styled(Link)``;
+const SectorMenuLink = styled(Link)`
+  color: #000;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  @media (max-width: 900px) {
+    font-size: 0.8rem;
+  }
+`;

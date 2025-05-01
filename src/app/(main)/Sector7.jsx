@@ -40,7 +40,7 @@ export default function Sector7() {
       });
     };
 
-    document.body.appendChild(script);
+    // document.body.appendChild(script);
   }, []);
 
   return (
@@ -73,7 +73,7 @@ export default function Sector7() {
             <div>로지컬수학학원</div>
             <div>경기도 안산시 단원구 광덕대로 130 508호</div>
             <div>
-              ※ 자세한 안내는{" "}
+              ※ 주차 안내를 포함한 자세한 안내는{" "}
               <Blog
                 href="https://blog.naver.com/logical_math/223613662438"
                 target="_blank"
@@ -90,13 +90,14 @@ export default function Sector7() {
 }
 
 const Wrapper = styled.div`
-  width: 100%;
+  max-width: 100vw;
   display: flex;
   justify-content: center;
 `;
 
 const MapCon = styled.div`
   width: 50%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -162,6 +163,7 @@ const MapDivCon = styled.div`
 `;
 
 const MapDisc = styled.div`
+  box-sizing: border-box;
   padding: 1rem 1.2rem;
   display: flex;
   flex-direction: column;

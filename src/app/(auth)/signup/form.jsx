@@ -331,7 +331,7 @@ export default function Form({ type, setType }) {
                 <Info required>
                   <div>학년</div>
                   <div>
-                    <InputDrop
+                    <Select
                       value={grade}
                       onChange={(e) => setGrade(e.target.value)}
                     >
@@ -341,7 +341,7 @@ export default function Form({ type, setType }) {
                       <option value="1학년">1학년</option>
                       <option value="2학년">2학년</option>
                       <option value="3학년">3학년</option>
-                    </InputDrop>
+                    </Select>
                   </div>
                 </Info>
               )}
@@ -511,7 +511,7 @@ const InputText = styled.input`
     `}
 `;
 
-const InputDrop = styled.select`
+const Select = styled.select`
   outline: none;
   max-width: 10rem;
   padding: 0.3rem 0.5rem;

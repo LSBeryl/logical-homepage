@@ -175,4 +175,8 @@ const BigBox = styled.div`
       transform: scale(1.02);
     }
   }
+
+  @media (max-width: 900px) {
+    border-radius: 0;
+  }
 `;

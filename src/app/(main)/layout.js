@@ -1,5 +1,6 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import { BackgroundProvider } from "../../context/BackgroundContext";
 import GlobalComponent from "../global";
 
 export const metadata = {
@@ -16,7 +17,7 @@ export default function RootLayout({ children }) {
       <GlobalComponent />
       {/* 글로벌 CSS 적용 */}
       <Header />
-      <div style={{ flex: "1" }}>{children}</div>
+      <BackgroundProvider style={{ flex: "1" }}>{children}</BackgroundProvider>
       <Footer />
     </>
   );
