@@ -69,7 +69,14 @@ const Wrapper = styled(motion.div)`
   background: ${({ theme }) => theme.colors.background.white};
   padding: 2rem;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-y: auto;
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+    gap: 1rem;
+    padding-top: 1rem;
+    justify-content: flex-start;
+  }
 `;
 
 const Title = styled.div`
@@ -77,12 +84,23 @@ const Title = styled.div`
   font-weight: 700;
   color: ${({ theme }) => theme.colors.primary};
   margin-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+  }
 `;
 
 const SubTitle = styled.div`
   font-size: 1.2rem;
   color: ${({ theme }) => theme.colors.text.gray};
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
 `;
 
 const BoxCon = styled.div`
@@ -95,6 +113,12 @@ const BoxCon = styled.div`
 
   @media (max-width: 1024px) {
     gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -125,6 +149,14 @@ const Box = styled(motion.div)`
     height: 250px;
     padding: 1.5rem;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 250px;
+    height: 150px;
+    padding: 0.8rem;
+    gap: 0.8rem;
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -146,6 +178,12 @@ const IconWrapper = styled.div`
     width: 100px;
     height: 100px;
   }
+
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+    padding: 0.3rem;
+  }
 `;
 
 const Label = styled.div`
@@ -153,4 +191,8 @@ const Label = styled.div`
   font-weight: 600;
   color: ${({ theme }) => theme.colors.text.black};
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;

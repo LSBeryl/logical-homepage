@@ -10,7 +10,7 @@ import Sector3 from "./Sector3";
 import Sector4 from "./Sector4";
 import Sector5 from "./Sector5";
 import Sector6 from "./Sector6";
-import Sector7 from "./Sector7";
+import Sector7 from "./Sector6";
 import { useBackground } from "../../context/BackgroundContext";
 import { theme } from "../../styles/theme";
 
@@ -22,11 +22,23 @@ export default function Main() {
   const conRef = useRef();
 
   useEffect(() => {
+    console.log(curSector);
+  }, [curSector]);
+
+  useEffect(() => {
     setCurBackColor(() => {
       if (curSector === 1) {
         return theme.colors.background.highlight;
-      } else if (curSector === 0) {
-        return theme.colors.background.accent;
+      } else if (curSector === 2) {
+        return theme.colors.background.extralight;
+      } else if (curSector === 3) {
+        return "#000"; // 연한 파란색 계열
+      } else if (curSector === 4) {
+        return "#FFF4E8"; // 연한 주황색 계열
+      } else if (curSector === 5) {
+        return "#F4E8FF"; // 연한 보라색 계열
+      } else if (curSector === 6) {
+        return "#FFFFFF"; // 흰색
       } else {
         return theme.colors.background.default;
       }
@@ -49,7 +61,6 @@ export default function Main() {
         <Sector4 />
         <Sector5 />
         <Sector6 />
-        <Sector7 />
       </SectorCon>
     </div>
   );

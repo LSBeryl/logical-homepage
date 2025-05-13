@@ -9,17 +9,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 
 /**
- * 시각 임팩트 - Sector #0
+ * 시각 임팩트 겸 메인 화면 - Sector #0
  */
 export default function Sector0() {
-  useEffect(() => {
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
-    requestAnimationFrame(() => {
-      window.scrollTo(0, 0);
-    });
-  }, []);
+  // useEffect(() => {
+  //   if ("scrollRestoration" in history) {
+  //     history.scrollRestoration = "manual";
+  //   }
+  //   requestAnimationFrame(() => {
+  //     window.scrollTo(0, 0);
+  //   });
+  // }, []);
   return (
     <ThemeProvider theme={theme}>
       <Wrapper
@@ -30,7 +30,7 @@ export default function Sector0() {
       >
         <BigBox href="#">
           <div>
-            <div>내신부터.</div>
+            <div>내신부터,</div>
             <div>수능 수학까지.</div>
           </div>
         </BigBox>
@@ -53,6 +53,20 @@ export default function Sector0() {
           </Box>
         </BoxCon>
       </Wrapper>
+      <Scroll>
+        <Arrow
+          animate={{
+            y: [0, 10, 0],
+            rotate: [45, 45, 45],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        스크롤하여 더 알아보기
+      </Scroll>
     </ThemeProvider>
   );
 }
@@ -63,9 +77,8 @@ const Wrapper = styled(motion.div)`
   padding: 2rem 10rem;
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
   gap: 2rem;
-  margin: 15vh 0;
+  margin: 7vh 0;
 
   @media (max-width: 1200px) {
     padding: 2rem 10rem;
@@ -158,13 +171,16 @@ const BigBox = styled.div`
   align-items: start;
   justify-content: space-between;
   flex-direction: column;
-  background: url("https://placehold.co/500x500");
+  /* background: url("https://placehold.co/500x500"); */
+  background: url("/sector1/보류류ㅠ copy.png");
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   cursor: initial;
-  color: ${({ theme }) => theme.colors.primary};
-  justify-content: end;
+  /* color: ${({ theme }) => theme.colors.primary}; */
+  color: #fff;
+  justify-content: flex-end;
   font-size: 2rem !important;
   font-weight: 600;
   padding: 2rem;
@@ -179,4 +195,21 @@ const BigBox = styled.div`
   @media (max-width: 900px) {
     border-radius: 0;
   }
+`;
+
+const Scroll = styled.div`
+  margin: 5vh 0 10vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+`;
+
+const Arrow = styled(motion.div)`
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  margin: 0.5rem 0;
 `;

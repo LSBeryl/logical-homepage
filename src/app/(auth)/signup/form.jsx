@@ -512,11 +512,12 @@ const InputText = styled.input`
 `;
 
 const Select = styled.select`
-  outline: none;
-  max-width: 10rem;
-  padding: 0.3rem 0.5rem;
   border: 1px solid #d1d1d1;
+  padding: 0.3rem 0.5rem;
   box-sizing: border-box;
+  width: calc(10rem - 5px);
+  outline: none;
+  font-size: 0.8rem;
 `;
 
 const SubmitCon = styled.div`

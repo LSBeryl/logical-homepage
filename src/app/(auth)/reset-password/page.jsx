@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 export default function ResetPassword() {
   const [email, setEmail] = useState("");
   const [isEmailSent, setIsEmailSent] = useState(false);
+  const [error, setError] = useState("");
   const router = useRouter();
 
   useEffect(() => {
@@ -28,7 +29,19 @@ export default function ResetPassword() {
 
   async function handleResetPassword() {
     if (!email) {
-      alert("이메일을 입력해주세요.");
+      setError("이메일을 입력해주세요.");
+      return;
+    }
+
+    // 이메일 존재 여부 확인
+    const { data: profile, error: profileError } = await supabase
+      .from("profiles")
+      .select("email")
+      .eq("email", email)
+      .single();
+
+    if (profileError || !profile) {
+      setError("가입되지 않은 이메일 주소입니다.");
       return;
     }
 
@@ -37,19 +50,16 @@ export default function ResetPassword() {
     });
 
     if (error) {
-      alert("비밀번호 재설정 이메일 전송 실패: " + error.message);
+      setError("비밀번호 재설정 이메일 전송 실패: " + error.message);
     } else {
+      setError("");
       setIsEmailSent(true);
     }
   }
 
   return (
     <ThemeProvider theme={theme}>
-      <Wrapper
-        initial={{ opacity: 0, y: "10%" }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
+      <Wrapper>
         <TitleCon>
           <ImgCon></ImgCon>
           <Title>비밀번호 재설정</Title>
@@ -66,11 +76,16 @@ export default function ResetPassword() {
                 placeholder="이메일"
                 type="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setError("");
+                }}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") handleResetPassword();
                 }}
+                hasError={!!error}
               />
+              {error && <ErrorMessage>{error}</ErrorMessage>}
               <Submit onClick={handleResetPassword}>이메일 전송</Submit>
             </>
           ) : (
@@ -92,7 +107,7 @@ export default function ResetPassword() {
   );
 }
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -151,14 +166,14 @@ const Description = styled.div`
 const Input = styled.input`
   width: 15rem;
   box-sizing: border-box;
-  border: 1px solid ${({ theme }) => theme.colors.border.light};
+  border: 1px solid ${({ hasError }) => (hasError ? "#ff4d4d" : "#e0e0e0")};
   padding: 0.8rem 1rem;
   outline: none;
   border-radius: 4px;
   transition: all 0.2s ease;
 
   &:focus {
-    border-color: ${({ theme }) => theme.colors.primary};
+    border-color: ${({ hasError }) => (hasError ? "#ff4d4d" : "#0066ff")};
   }
 `;
 
@@ -214,4 +229,12 @@ const Goto = styled(Link)`
   &:hover {
     color: ${({ theme }) => theme.colors.primary};
   }
+`;
+
+const ErrorMessage = styled.div`
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  margin-top: -1rem;
+  text-align: center;
+  width: 15rem;
 `;
