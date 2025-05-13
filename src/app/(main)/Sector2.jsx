@@ -214,7 +214,7 @@ export default function Sector2() {
 }
 
 const Wrapper = styled.div`
-  padding: 200vh 0 8rem 0;
+  padding: 100vh 0 8rem 0;
   overflow: hidden;
 
   &.visible * {

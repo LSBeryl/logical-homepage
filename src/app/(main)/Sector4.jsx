@@ -134,5 +134,5 @@ export default function Sector4() {
 
 const Wrapper = styled.div`
   max-width: 100vw;
-  padding: 200vh 0 8rem 0;
+  padding: 100vh 0 8rem 0;
 `;

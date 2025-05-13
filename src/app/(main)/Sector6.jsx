@@ -109,7 +109,7 @@ export default function Sector6() {
 }
 
 const Wrapper = styled.div`
-  padding: 200vh 0 8rem 0;
+  padding: 100vh 0 8rem 0;
   max-width: 100vw;
   display: flex;
   justify-content: center;
