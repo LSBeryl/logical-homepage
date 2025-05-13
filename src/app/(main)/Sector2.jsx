@@ -241,7 +241,7 @@ const AnimatedText = styled.span`
   border-radius: 0.2rem;
   margin: 0 0.2rem;
   background: linear-gradient(to right, #1a3d92 50%, #eef5fd 50%);
-  background-position: 0 0;
+  background-position: 100% 0;
   background-size: 200% 100%;
   color: #000;
   overflow: hidden;

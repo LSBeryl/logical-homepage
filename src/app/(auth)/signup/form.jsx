@@ -46,10 +46,24 @@ export default function Form({ type, setType }) {
         alert("인증 실패 : " + error.message);
         setIsCertificated(false);
       } else {
+        // 가입 상태 확인
+        if (type === "student" && data.child_is_registered) {
+          alert("이미 가입된 학생입니다.");
+          setIsCertificated(false);
+          return;
+        }
+        if (type === "parents" && data.parent_is_registered) {
+          alert("이미 가입된 학부모입니다.");
+          setIsCertificated(false);
+          return;
+        }
+
+        // 인증 성공 및 가입 가능한 경우
         alert("인증에 성공하였습니다.");
         setIsCertificated(true);
-        if (type === "student") setName(data.name);
-        else if (type === "parents") {
+        if (type === "student") {
+          setName(data.name);
+        } else if (type === "parents") {
           setName(data.name + " 학부모");
           setChildrenName(data.name);
         }
@@ -207,9 +221,23 @@ export default function Form({ type, setType }) {
         alert("오류 발생 : ", error.message);
         console.log(error.message);
       } else {
+        // profiles 테이블에 정보 저장
+        await insertProfile(data.user?.id);
+
+        // student_certification 테이블의 가입 상태 업데이트
+        if (type === "student") {
+          await supabase
+            .from("student_certification")
+            .update({ child_is_registered: true })
+            .eq("certi_code", certiCode);
+        } else if (type === "parents") {
+          await supabase
+            .from("student_certification")
+            .update({ parent_is_registered: true })
+            .eq("certi_code", certiCode);
+        }
+
         await supabase.auth.signOut();
-        insertProfile(data.user?.id);
-        console.log(data.user?.id);
         router.push("/signin");
       }
     }
