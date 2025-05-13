@@ -60,6 +60,7 @@ export default function SectorMenu({ curSector, setSector }) {
 }
 
 const Wrapper = styled.div`
+  max-width: 100vw;
   width: 100%;
   box-sizing: border-box;
   padding: 0 10rem;

@@ -184,6 +184,7 @@ const DayContent = styled.div`
   gap: 3rem;
   width: 100%;
   max-width: 800px;
+  box-sizing: border-box;
   z-index: 1;
   opacity: ${(props) => (props.active ? 1 : 0.5)};
   transition: all 0.3s ease;
