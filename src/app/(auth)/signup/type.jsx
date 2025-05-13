@@ -5,11 +5,18 @@ import { css, Global, ThemeProvider } from "@emotion/react";
 import { theme } from "../../../styles/theme";
 import Policy from "./policy";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function Type({ setType }) {
+  const router = useRouter();
+
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
+        <HomeButton onClick={() => router.push("/")}>
+          <FaArrowLeft /> 홈으로
+        </HomeButton>
         <Title>회원가입</Title>
         <SubTitle>회원 유형을 선택해주세요</SubTitle>
         <BoxCon>
@@ -194,5 +201,27 @@ const Label = styled.div`
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
+  }
+`;
+
+const HomeButton = styled.div`
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.lightPrimary};
+    background: rgba(255, 255, 255, 1);
   }
 `;
