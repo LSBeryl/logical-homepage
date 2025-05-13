@@ -19,7 +19,7 @@ export default function SectorMenu({ curSector, setSector }) {
       const offset =
         index == 0
           ? targetSector.offsetTop + vh + 100
-          : targetSector.offsetTop + 2 * vh - 150;
+          : targetSector.offsetTop + vh - 150;
       window.scrollTo({
         top: offset,
         behavior: "smooth",
