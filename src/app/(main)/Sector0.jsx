@@ -102,6 +102,7 @@ const BoxCon = styled.div`
 
   @media (max-width: 1200px) {
     flex-direction: row;
+    gap: 1rem;
   }
 
   @media (max-width: 900px) {
