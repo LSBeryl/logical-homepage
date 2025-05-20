@@ -26,19 +26,20 @@ export default function Main() {
   }, [curSector]);
 
   useEffect(() => {
+    console.log(curSector);
     setCurBackColor(() => {
       if (curSector === 1) {
         return theme.colors.background.highlight;
       } else if (curSector === 2) {
         return theme.colors.background.extralight;
       } else if (curSector === 3) {
-        return "#000"; // 연한 파란색 계열
+        return "#000";
       } else if (curSector === 4) {
-        return "#FFF4E8"; // 연한 주황색 계열
+        return "#121212";
       } else if (curSector === 5) {
-        return "#F4E8FF"; // 연한 보라색 계열
+        return "#121212";
       } else if (curSector === 6) {
-        return "#FFFFFF"; // 흰색
+        return "#FFFFFF";
       } else {
         return theme.colors.background.default;
       }

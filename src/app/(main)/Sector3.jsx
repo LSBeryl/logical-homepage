@@ -48,14 +48,21 @@ export default function Sector3() {
         <Timeline>
           <DayContent active={activeDay === 1}>
             <DayCircle className="day-circle" active={activeDay === 1}>
-              Day 1
+              1단계
             </DayCircle>
             <DayInfo>
-              <DayTitle>주간학습 로드맵 설정</DayTitle>
+              <DayTitle>1:1 맞춤 로드맵 형성</DayTitle>
               <DayDescription>
                 <DayText>
-                  각 학생에게 가장 적합한 주간 커리큘럼을 1:1 맞춤으로 설정하여,
-                  가장 효율적인 학습 루틴을 제공합니다.
+                  <span>
+                    체계화된 레벨 테스트를 통해 현재의 실력을 정확하게 진단하고
+                    취약점을 체계적으로 분석합니다.
+                  </span>
+                  <span>
+                    결과를 바탕으로 학생이 필요로 하는 부분을 중점적으로 1:1
+                    맞춤 로드맵을 설계하여 효율적이고 개인화된 학습이
+                    가능합니다.
+                  </span>
                 </DayText>
                 <TagContainer>
                   <Tag>레벨 테스트</Tag>
@@ -66,16 +73,26 @@ export default function Sector3() {
             </DayInfo>
           </DayContent>
           <VerticalLine />
+
+          {/*  */}
+
           <DayContent active={activeDay === 2}>
             <DayCircle className="day-circle" active={activeDay === 2}>
-              Day 2~6
+              2단계
             </DayCircle>
             <DayInfo>
-              <DayTitle>선생님과 함께하는 자기주도 학습</DayTitle>
+              <DayTitle>나에게 맞는 맞춤 진도 (1:1 관리)</DayTitle>
               <DayDescription>
                 <DayText>
-                  언제 어디서나 선생님이 곁에 있는 것처럼 숙제를 진행하고, 매일
-                  숙제 체크 및 숙성 클래스로 진도가 밀리지 않도록 관리합니다.
+                  <span>
+                    로지컬수학은 학생 개개인의 실력에 가장 적합한 커리큘럼을
+                    제공합니다.
+                  </span>
+                  <span>
+                    나의 수준에 딱맞는 개념과 문제를 학습할 수 있도록 30종
+                    이상의 교재가 체계적으로 구성되어 있어 학생이 수학을 쉽게
+                    배울 수 있도록 돕습니다.
+                  </span>
                 </DayText>
                 <TagContainer>
                   <Tag>숙성 클래스</Tag>
@@ -87,16 +104,23 @@ export default function Sector3() {
             </DayInfo>
           </DayContent>
           <VerticalLine />
+
           <DayContent active={activeDay === 3}>
             <DayCircle className="day-circle" active={activeDay === 3}>
-              Day 7
+              3단계
             </DayCircle>
             <DayInfo>
-              <DayTitle>1:1 맞춤 실전 테스트</DayTitle>
+              <DayTitle>1:1 로직테스트 (feat. 과외)</DayTitle>
               <DayDescription>
                 <DayText>
-                  한 주간 배웠던 내용을 로직 테스트와 실전 테스트로 복습하며,
-                  통과할 때까지 무한 재시험을 진행합니다.
+                  <span>
+                    로지컬수학은 한 주간 학습한 내용을 선생님과 1:1로 대화하며
+                    마무리 하는 시간을 제공합니다.
+                  </span>
+                  <span>
+                    선생님은 학생이 개념을 말로 설명할 수 있는 수준까지 끌어주고
+                    수학학습에 있어서 페이스 메이커가 되어 함께합니다.
+                  </span>
                 </DayText>
                 <TagContainer>
                   <Tag>1:1 개념완성 구두테스트</Tag>
@@ -106,6 +130,89 @@ export default function Sector3() {
                   <Tag>학습 수행도 점검</Tag>
                   <Tag>동기부여</Tag>
                   <Tag>학습 조언</Tag>
+                </TagContainer>
+              </DayDescription>
+            </DayInfo>
+          </DayContent>
+          <VerticalLine />
+
+          <DayContent active={activeDay === 4}>
+            <DayCircle className="day-circle" active={activeDay === 4}>
+              4단계
+            </DayCircle>
+            <DayInfo>
+              <DayTitle>케어링</DayTitle>
+              <DayDescription>
+                <DayText>
+                  <span>
+                    실시간 1:1 피드백을 통해 학생의 약점과 부족한 부분을
+                    정밀하게 짚어주고, 그때그때 필요한 보완을 함께 설계해주는
+                    맞춤형 케어 시스템입니다.
+                  </span>
+                  <span>
+                    혼자 공부할 땐 놓치기 쉬운 부분도 전문가의 코칭 아래
+                    안정적으로 점검하며, 실력의 흐름을 흔들림 없이 잡아갈 수
+                    있습니다.
+                  </span>
+                </DayText>
+                <TagContainer>
+                  <Tag>1:1 피드백</Tag>
+                  <Tag>케어링 클래스</Tag>
+                  <Tag>실시간 질문</Tag>
+                  <Tag></Tag>
+                </TagContainer>
+              </DayDescription>
+            </DayInfo>
+          </DayContent>
+          <VerticalLine />
+
+          <DayContent active={activeDay === 5}>
+            <DayCircle className="day-circle" active={activeDay === 5}>
+              5단계
+            </DayCircle>
+            <DayInfo>
+              <DayTitle>(내신대비 커리큘럼) 1:1 맞춤형 실전 테스트</DayTitle>
+              <DayDescription>
+                <DayText>
+                  <span>
+                    한 주간의 학습 내용을 바탕으로 진행되는 1:1 맞춤형 테스트는
+                    자신의 한계를 점검하고 도전해보는 수업입니다.
+                  </span>
+                  <span>
+                    테스트 이후에는 오답 유형을 분석하고 유사 문제를 추가로
+                    해결하며, 학습을 완성도 있게 마무리합니다.
+                  </span>
+                </DayText>
+                <TagContainer>
+                  <Tag>무</Tag>
+                  <Tag>엇</Tag>
+                  <Tag>을</Tag>
+                </TagContainer>
+              </DayDescription>
+            </DayInfo>
+          </DayContent>
+
+          <DayContent active={activeDay === 6}>
+            <DayCircle className="day-circle" active={activeDay === 6}>
+              5단계
+            </DayCircle>
+            <DayInfo>
+              <DayTitle>(정시대비 커리큘럼) 1:1 맞춤형 실전 테스트</DayTitle>
+              <DayDescription>
+                <DayText>
+                  <span>
+                    매주, 수학 전문 로지컬 선생님들이 엄선한 기출 기반
+                    모의고사를 통해 실전 감각을 끌어올립니다.
+                  </span>
+                  <span>
+                    취약한 개념과 자주 틀리는 문제 유형은 대표 강사님의 특별
+                    판서 수업을 통해 정확하게 짚고 탄탄하게 다져갑니다.
+                  </span>
+                </DayText>
+                <TagContainer>
+                  <Tag>넣</Tag>
+                  <Tag>을</Tag>
+                  <Tag>까</Tag>
                 </TagContainer>
               </DayDescription>
             </DayInfo>
@@ -124,7 +231,7 @@ const Wrapper = styled.div`
 const StickyCon = styled.div`
   position: sticky;
   top: 10rem;
-  height: 150vh;
+  /* height: 150vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -256,6 +363,9 @@ const DayText = styled.p`
   opacity: 0.8;
   line-height: 1.5;
   margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 
   @media (max-width: 900px) {
     font-size: 0.9rem;

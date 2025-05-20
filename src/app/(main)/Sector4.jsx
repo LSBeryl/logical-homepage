@@ -4,6 +4,7 @@
 import styled from "@emotion/styled";
 import { useBackground } from "../../context/BackgroundContext";
 import { useEffect, useRef } from "react";
+import people from "../../data/people";
 
 /**
  * 명예의 전당 - Sector #4
@@ -25,109 +26,56 @@ export default function Sector4() {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
 
+  const title = "명예의 전당";
+
   return (
     <Wrapper ref={wrapperRef} id="sector-4">
-      <h2>명예의 전당</h2>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem rem
-        voluptate vitae sequi dolor similique amet facilis, ut esse quibusdam
-        ad, vero dolorum pariatur numquam nobis doloremque repudiandae eaque
-        vel? Saepe aut placeat architecto debitis ad ducimus dolores maxime ipsa
-        officiis similique illum nihil harum libero dolor temporibus nulla
-        laborum consectetur eveniet numquam nemo veniam, ut odit explicabo.
-        Velit, tempora. Molestiae saepe id ratione placeat? Ratione deserunt
-        quas nulla? Temporibus dolore, at sint, tempore maiores fugit nesciunt
-        totam sit nihil optio repellat labore aspernatur culpa pariatur,
-        similique vel impedit velit. Sequi temporibus aperiam tenetur. Unde
-        similique fuga corporis nobis vero ipsum recusandae eius et voluptatum,
-        facilis, natus maxime tempore, cupiditate officia itaque cum dolores. Ea
-        dolores omnis eaque laboriosam vero? Voluptatum eligendi praesentium rem
-        beatae unde optio reprehenderit aliquam! Labore exercitationem, dolorem
-        amet nihil accusamus enim, harum placeat eaque quaerat aliquam ipsa,
-        officiis error eum consectetur facilis in dignissimos sapiente! Laborum
-        assumenda, amet dolor repellendus laboriosam veritatis, nam repellat
-        molestias temporibus saepe excepturi quasi quo modi, possimus facilis
-        sunt iste culpa commodi quos praesentium eum? Illo quas dolorum nobis
-        accusantium! Iusto totam nesciunt ullam quis! Quae nam facere tenetur
-        cum, ab repellat dignissimos accusamus hic aliquam ea dolorem ad omnis
-        quaerat mollitia. Dolor impedit quidem sapiente delectus ut fugit
-        mollitia. Itaque error sapiente dolores iusto? Sint accusantium autem
-        placeat voluptates a perferendis nisi amet rem perspiciatis. Est ipsam
-        error consequatur rerum illo sunt excepturi voluptatem quis consectetur,
-        facere iusto possimus. Enim, cum veritatis! Delectus, doloremque.
-        Voluptatum, impedit facere. Rem, temporibus deleniti. Nobis corporis
-        sequi qui! Doloribus quidem error fugiat culpa pariatur voluptatum.
-        Suscipit libero asperiores doloremque! Optio numquam tempore iusto!
-        Praesentium at a dolores obcaecati asperiores molestias saepe odit,
-        blanditiis harum nobis dicta magni? Commodi aspernatur inventore officia
-        iure eos nisi quas ipsa in consequuntur libero! Totam, natus ut. Qui!
-        Similique quis expedita libero magni, error ex delectus modi, hic
-        labore, molestias eligendi. Necessitatibus, aliquam minus quam explicabo
-        ab saepe natus nisi aperiam laboriosam quos corrupti molestiae. Iusto,
-        enim saepe? Reprehenderit vel voluptatum dolore cum ad quasi itaque sed
-        iusto! Possimus dignissimos libero molestias qui magnam, vitae deserunt
-        voluptatum atque. Vero earum, harum eaque atque facilis quos minus
-        delectus eos? Ex ducimus, expedita, praesentium numquam suscipit sequi
-        illo voluptas, hic doloremque natus in obcaecati quam aut? Quibusdam
-        aspernatur architecto doloribus atque iste consequatur, suscipit illum
-        soluta? Eveniet neque tempora nihil? Sit modi vel molestiae ex earum id
-        architecto eius. In, consequuntur! Dicta deserunt molestiae officiis rem
-        optio dignissimos et ipsum expedita delectus? Porro sint exercitationem
-        hic sit earum eveniet unde! Nihil exercitationem, ullam sit nesciunt
-        error ad iste ipsum, suscipit quasi nam mollitia asperiores nostrum.
-        Delectus incidunt necessitatibus ut recusandae atque voluptates aliquid
-        vero iure dignissimos, voluptate obcaecati? Ullam, quisquam. Dolores
-        placeat, vero voluptates, ab voluptas officiis culpa necessitatibus quo
-        aliquid voluptate cum itaque vitae? Incidunt itaque perspiciatis tempore
-        earum soluta amet debitis tempora distinctio ab quaerat, eveniet, modi
-        ipsam. Deleniti ullam laudantium quidem numquam, voluptatibus non sed
-        officia libero repellat possimus provident iure! Quo, sequi maiores
-        quasi magnam aspernatur ut atque iste nesciunt aliquam exercitationem
-        fugiat facilis pariatur velit? Delectus ut quo similique odio nihil unde
-        laborum autem voluptatem esse nisi nulla consectetur natus temporibus
-        vero perferendis, iure quisquam aut dolor. Assumenda voluptatem
-        reprehenderit mollitia quod suscipit. Corrupti, illo! Esse, nisi? Autem
-        temporibus totam repellendus sequi iste neque officia doloribus ad! Modi
-        nostrum, a numquam exercitationem alias harum eius magni ipsa culpa.
-        Atque fuga ducimus error, aspernatur ullam iure. Voluptas molestias cum
-        adipisci architecto quos, doloremque eum eveniet et hic dolore,
-        aspernatur voluptates praesentium ut magni officia atque expedita at
-        voluptate perferendis, sit inventore quis. Placeat repellendus dolorem
-        rem. Illum asperiores sint tenetur voluptatem quasi temporibus ex.
-        Beatae perferendis possimus repudiandae optio vel ex, tempora illo
-        deserunt tenetur, voluptatem illum fugit facilis quidem maiores sed est
-        officiis ipsa ab? Voluptas provident quibusdam cumque corporis nostrum!
-        Distinctio, laboriosam. Aliquam laborum ex incidunt facilis laudantium
-        repellat aperiam quasi quidem impedit sit quaerat, blanditiis officiis
-        voluptatibus maiores, aut recusandae. Vitae, in atque? Est repudiandae
-        modi voluptates delectus blanditiis? Vel ex ullam voluptas est adipisci
-        voluptatem dolores, voluptatum odio nemo modi molestiae, commodi
-        reiciendis magni earum iste perspiciatis. Omnis exercitationem fugiat
-        illum magnam? Aperiam delectus neque repellat impedit necessitatibus
-        tenetur officiis tempora aliquid, dignissimos temporibus obcaecati
-        officia! Excepturi ullam aut dolore vero aspernatur corrupti minus, sit
-        sint illum, unde repellat veritatis ad provident. Deleniti unde sapiente
-        in architecto laboriosam voluptate alias beatae labore incidunt
-        pariatur? Aliquid ex aut iure impedit. Quasi commodi qui, ullam odit a
-        nemo ab rem? Nemo doloremque veniam impedit! Saepe ratione aspernatur
-        rem magnam aliquam ducimus. Recusandae id distinctio atque explicabo
-        quod similique. Doloribus recusandae, distinctio reiciendis
-        exercitationem omnis quae blanditiis ipsa deleniti quis. Corporis
-        distinctio ad qui commodi. Ducimus pariatur similique laboriosam eos at
-        porro corporis commodi quam soluta reprehenderit quibusdam enim ea eum
-        et, saepe asperiores praesentium blanditiis ipsum tempora officia
-        provident modi iste laborum! Praesentium, beatae. Autem saepe laudantium
-        eveniet, odit dolores aliquam voluptatum, error aliquid adipisci tempore
-        eligendi veritatis ea? Veniam reiciendis quod quisquam laboriosam dolore
-        eveniet libero quos quasi voluptatibus pariatur. Illo, alias quod. Vero
-        sint non nam possimus deleniti velit animi voluptates explicabo commodi
-        culpa sapiente alias deserunt perspiciatis quasi, dicta id vel quae sit
-        quidem exercitationem? Quia obcaecati architecto itaque odio voluptates?
-        Voluptatum cum totam laboriosam esse aperiam provident possimus,
-        assumenda mollitia ducimus explicabo, commodi vitae eius laudantium
-        perferendis quas quod quos dolor natus. Accusamus, aliquid aperiam
-        architecto iusto eum corporis asperiores?
-      </div>
+      <SubTitle>2024년 & 2025년 로지컬수학</SubTitle>
+      <Title>
+        <Leaf>
+          <img src="/leaf.png" alt="leaf" />
+        </Leaf>
+        {title.split("").map((char, index) => (
+          <GradientChar key={index} delay={index * 0.1}>
+            {char === " " ? "\u00A0" : char}
+          </GradientChar>
+        ))}
+        <Leaf className="right">
+          <img src="/leaf.png" alt="leaf" />
+        </Leaf>
+      </Title>
+      <SubTitle>최우수 성적 향상자 & 성적 우수자</SubTitle>
+      <People>
+        {people.map((person, i) => (
+          <Person key={i}>
+            <RibbonCon message={person.type} index={i}>
+              <img src="/gold_ribbon.png" alt="gold_ribbon" />
+              <CurvedText viewBox="0 -4 40 8">
+                <path
+                  id={`curve-${i}`}
+                  d="M 0,0 Q 20,-4 40,0"
+                  fill="none"
+                  stroke="none"
+                />
+                <text>
+                  <textPath
+                    href={`#curve-${i}`}
+                    startOffset="50%"
+                    textAnchor="middle"
+                  >
+                    {person.type}
+                  </textPath>
+                </text>
+              </CurvedText>
+            </RibbonCon>
+            <div>
+              <div>{person.school}</div>
+              <div>{person.name}</div>
+              <div>{person.achievement}</div>
+            </div>
+          </Person>
+        ))}
+      </People>
     </Wrapper>
   );
 }
@@ -135,4 +83,134 @@ export default function Sector4() {
 const Wrapper = styled.div`
   max-width: 100vw;
   padding: 100vh 0 8rem 0;
+  transition: background 0.5s ease;
+
+  &.visible {
+    background: radial-gradient(
+        circle at center 20%,
+        #fbe18f40 0%,
+        #e2b84b26 30%,
+        #a8781c0d 60%
+      ),
+      #121212;
+  }
+
+  & > h2 {
+    color: #fff;
+  }
+`;
+
+const SubTitle = styled.div`
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  text-align: center;
+`;
+
+const Person = styled.div`
+  background: linear-gradient(45deg, #ffd700, #b8860b);
+  padding: 1px;
+  display: inline-block;
+  position: relative;
+  min-width: 10rem;
+  & > div:not(:first-of-type) {
+    background: #121212;
+    color: #fff;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    & > div {
+      &:nth-of-type(1) {
+        font-weight: 400;
+      }
+      &:nth-of-type(2) {
+        font-weight: 400;
+      }
+      &:nth-of-type(3) {
+        font-weight: 500;
+        color: #fad579;
+      }
+    }
+  }
+`;
+
+const RibbonCon = styled.div`
+  position: absolute;
+  background: transparent;
+  top: -1.5rem;
+  left: 0.5rem;
+  & > img {
+    height: 3rem;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+const CurvedText = styled.svg`
+  position: absolute;
+  top: 0.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 2rem;
+  & text {
+    font-size: 0.3rem;
+    font-weight: 800;
+    fill: #000;
+  }
+`;
+
+const Title = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+`;
+
+const Leaf = styled.div`
+  & > img {
+    height: 5rem;
+  }
+  &.right {
+    transform: rotateY(180deg);
+  }
+`;
+
+const GradientChar = styled.span`
+  @font-face {
+    font-family: "RixYeoljeongdo_Regular";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/RixYeoljeongdo_Regular.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  font-family: "RixYeoljeongdo_Regular";
+  font-size: 3rem;
+  display: inline-block;
+  background: linear-gradient(90deg, #b8860b, #ffddb4, #c4a965);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+`;
+
+const People = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 10vh 0;
+  justify-content: center;
 `;
