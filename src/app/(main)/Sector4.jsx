@@ -213,4 +213,9 @@ const People = styled.div`
   gap: 2rem;
   padding: 10vh 0;
   justify-content: center;
+
+  @media (max-width: 900px) {
+    column-gap: 1rem;
+    row-gap: 2rem;
+  }
 `;
