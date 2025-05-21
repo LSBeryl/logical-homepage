@@ -17,6 +17,7 @@ export default function Signin() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [toast, setToast] = useState({ message: "", isVisible: false });
+  const [isLogining, setIsLogining] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -45,6 +46,8 @@ export default function Signin() {
       return;
     }
 
+    setIsLogining(true);
+
     try {
       const { data, error } = await supabase
         .from("profiles")
@@ -69,6 +72,8 @@ export default function Signin() {
       }
     } catch (err) {
       showToast("로그인 중 오류가 발생했습니다.");
+    } finally {
+      setIsLogining(false);
     }
   }
 
@@ -108,7 +113,9 @@ export default function Signin() {
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </PasswordToggle>
           </PasswordInputContainer>
-          <Submit onClick={login}>로그인</Submit>
+          <Submit onClick={login} className={isLogining ? "logining" : ""}>
+            {isLogining ? "로그인 중..." : "로그인"}
+          </Submit>
           <BtnsCon>
             <Goto href="/signup">새로 오셨나요?</Goto>
             <Goto href="/reset-password">비밀번호를 잊으셨나요?</Goto>
@@ -200,6 +207,9 @@ const Submit = styled.div`
   border-radius: 4px;
   transition: all 0.2s ease;
 
+  &.logining {
+    background: ${({ theme }) => theme.colors.lightPrimary};
+  }
   &:hover {
     background: ${({ theme }) => theme.colors.lightPrimary};
   }
