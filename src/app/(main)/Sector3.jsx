@@ -157,9 +157,9 @@ export default function Sector3() {
                 </DayText>
                 <TagContainer>
                   <Tag>1:1 피드백</Tag>
-                  <Tag>케어링 클래스</Tag>
-                  <Tag>실시간 질문</Tag>
-                  <Tag></Tag>
+                  <Tag>내신 릴레이</Tag>
+                  <Tag>실시간 질의응답</Tag>
+                  <Tag>REVIEW EXERCISE</Tag>
                 </TagContainer>
               </DayDescription>
             </DayInfo>
@@ -184,9 +184,11 @@ export default function Sector3() {
                   </span>
                 </DayText>
                 <TagContainer>
-                  <Tag>무</Tag>
-                  <Tag>엇</Tag>
-                  <Tag>을</Tag>
+                  <Tag>매주 실전 경험</Tag>
+                  <Tag>1:1 피드백</Tag>
+                  <Tag>오답 유사 문제 풀이</Tag>
+                  <Tag>킬러 문제 챌린지</Tag>
+                  <Tag>나만의 시험지</Tag>
                 </TagContainer>
               </DayDescription>
             </DayInfo>
@@ -210,9 +212,9 @@ export default function Sector3() {
                   </span>
                 </DayText>
                 <TagContainer>
-                  <Tag>넣</Tag>
-                  <Tag>을</Tag>
-                  <Tag>까</Tag>
+                  <Tag>매주 익히는 실전 감각</Tag>
+                  <Tag>로지컬 대표강사 현장 직강</Tag>
+                  <Tag>최상위 정시 준비</Tag>
                 </TagContainer>
               </DayDescription>
             </DayInfo>

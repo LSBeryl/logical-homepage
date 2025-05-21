@@ -83,17 +83,13 @@ export default function Sector4() {
 const Wrapper = styled.div`
   max-width: 100vw;
   padding: 100vh 0 8rem 0;
-  transition: background 0.5s ease;
-
-  &.visible {
-    background: radial-gradient(
-        circle at center 20%,
-        #fbe18f40 0%,
-        #e2b84b26 30%,
-        #a8781c0d 60%
-      ),
-      #121212;
-  }
+  background: radial-gradient(
+    circle at center 45%,
+    #fbe18f66 0%,
+    #e2b84b33 20%,
+    #a8781c1a 35%,
+    transparent 45%
+  );
 
   & > h2 {
     color: #fff;

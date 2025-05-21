@@ -84,7 +84,7 @@ export default function Header() {
             ) : (
               <Signin href="/signin">로그인</Signin>
             )}
-            <Signup href="/signup">회원가입</Signup>
+            {!user?.sub && <Signup href="/signup">회원가입</Signup>}
           </Sign>
         </PCRight>
         <Hamburger user={user} />
@@ -239,8 +239,12 @@ const Signin = styled(Link)`
 
 const Signout = styled.div`
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
   color: ${({ theme }) => theme.colors.text.black};
+  text-decoration: none;
+  padding: 0.5rem !important;
+  border-radius: 4px;
+  border: 1px solid ${({ theme }) => theme.colors.border.light};
   cursor: pointer;
 `;
 

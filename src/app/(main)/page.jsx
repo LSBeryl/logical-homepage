@@ -37,7 +37,7 @@ export default function Main() {
       } else if (curSector === 4) {
         return "#121212";
       } else if (curSector === 5) {
-        return "#121212";
+        return theme.colors.background.extralight;
       } else if (curSector === 6) {
         return "#FFFFFF";
       } else {

@@ -145,6 +145,17 @@ const Wrapper = styled.div`
 
 const BigBox = styled(motion.div)`
   width: 100%;
+  &:nth-of-type(4) {
+    & > div:nth-of-type(2) {
+      & > div {
+        background-color: transparent;
+      }
+      & > div > img {
+        background-color: transparent;
+        box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
 `;
 
 const Box = styled.div`

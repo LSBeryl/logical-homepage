@@ -13,7 +13,7 @@ import { FaEye, FaEyeSlash, FaArrowLeft } from "react-icons/fa";
 import { getErrorMessage } from "../../../utils/errorMessages";
 
 export default function Signin() {
-  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [toast, setToast] = useState({ message: "", isVisible: false });
@@ -40,8 +40,8 @@ export default function Signin() {
   };
 
   async function login() {
-    if (!userName || !password) {
-      showToast("아이디와 비밀번호를 모두 입력해주세요.");
+    if (!userEmail || !password) {
+      showToast("이메일과 비밀번호를 모두 입력해주세요.");
       return;
     }
 
@@ -49,7 +49,7 @@ export default function Signin() {
       const { data, error } = await supabase
         .from("profiles")
         .select("*")
-        .eq("user_name", userName)
+        .eq("email", userEmail)
         .single();
 
       if (error) {
@@ -90,10 +90,11 @@ export default function Signin() {
         </TitleCon>
         <FormCon>
           <Input
-            placeholder="아이디"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
+            placeholder="이메일"
+            value={userEmail}
+            onChange={(e) => setUserEmail(e.target.value)}
             onKeyDown={handleKeyPress}
+            type="email"
           />
           <PasswordInputContainer>
             <Input

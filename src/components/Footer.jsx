@@ -24,7 +24,7 @@ export default function Footer() {
         </div>
         <div>개인정보관리책임자 : 이휘주 | 이메일 : dldlgnlgnlwn@naver.com</div>
       </InfoCon>
-      <Copyright>Copyright ⓒ 2024 로지컬수학학원 All Rights Reserved</Copyright>
+      <Copyright>ⓒ 2024 로지컬수학학원 All Rights Reserved</Copyright>
     </Wrapper>
   );
 }
