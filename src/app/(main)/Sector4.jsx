@@ -30,7 +30,7 @@ export default function Sector4() {
 
   return (
     <Wrapper ref={wrapperRef} id="sector-4">
-      <SubTitle>2024년 & 2025년 로지컬수학</SubTitle>
+      <SubTitle>2024 & 2025 로지컬수학</SubTitle>
       <Title>
         <Leaf>
           <img src="/leaf.png" alt="leaf" />
