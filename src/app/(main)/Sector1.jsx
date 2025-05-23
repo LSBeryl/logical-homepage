@@ -153,7 +153,7 @@ export default function Sector1() {
               ease: "easeInOut",
             }}
           />
-          로지컬수학 생생 후기보기
+          로지컬수학 생생 후기 보기
         </Scroll>
       </Wrapper>
     </ThemeProvider>
