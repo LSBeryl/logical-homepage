@@ -247,7 +247,7 @@ const Scroll = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   color: #fff;
   cursor: pointer;
 `;

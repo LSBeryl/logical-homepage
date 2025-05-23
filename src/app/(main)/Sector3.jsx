@@ -431,6 +431,7 @@ const Scroll = styled.div`
   gap: 1rem;
   color: #fff;
   cursor: pointer;
+  font-weight: 600;
 `;
 
 const Arrow = styled(motion.div)`
