@@ -37,6 +37,15 @@ export default function Sector1() {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
 
+  function scrollToSector2() {
+    window.scrollTo({
+      top:
+        document.getElementById("sector-2").offsetTop +
+        window.innerHeight -
+        150,
+      behavior: "smooth",
+    });
+  }
   return (
     <ThemeProvider theme={theme}>
       <Wrapper id="sector-1">
@@ -132,6 +141,20 @@ export default function Sector1() {
             ))}
           </NeedsCon>
         </NeedsSection>
+        <Scroll onClick={scrollToSector2}>
+          <Arrow
+            animate={{
+              y: [0, 10, 0],
+              rotate: [45, 45, 45],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          로지컬수학 생생 후기보기
+        </Scroll>
       </Wrapper>
     </ThemeProvider>
   );
@@ -366,4 +389,22 @@ const Annotation = styled.div`
   & > div {
     text-align: right;
   }
+`;
+
+const Scroll = styled.div`
+  margin: 5vh 0 10vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #ccc;
+  cursor: pointer;
+  font-weight: 500;
+`;
+
+const Arrow = styled(motion.div)`
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
 `;

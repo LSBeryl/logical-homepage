@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import { useBackground } from "../../context/BackgroundContext";
 import { useEffect, useRef, useState } from "react";
 import getRem from "../../utils/pxToRem";
+import { motion } from "framer-motion";
 
 /**
  * 로지컬 커리큘럼 - Sector #3
@@ -39,6 +40,16 @@ export default function Sector3() {
     window.addEventListener("scroll", scrollHandler);
     return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
+
+  function scrollToSector4() {
+    window.scrollTo({
+      top:
+        document.getElementById("sector-4").offsetTop +
+        window.innerHeight -
+        150,
+      behavior: "smooth",
+    });
+  }
 
   return (
     <Wrapper ref={wrapperRef} id="sector-3">
@@ -220,6 +231,20 @@ export default function Sector3() {
             </DayInfo>
           </DayContent>
         </Timeline>
+        <Scroll onClick={scrollToSector4}>
+          <Arrow
+            animate={{
+              y: [0, 10, 0],
+              rotate: [45, 45, 45],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          명예의 전당 보기
+        </Scroll>
       </StickyCon>
     </Wrapper>
   );
@@ -396,4 +421,22 @@ const Tag = styled.span`
     font-size: 0.8rem;
     padding: 0.4rem 0.8rem;
   }
+`;
+
+const Scroll = styled.div`
+  margin: 5vh 0 10vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+  cursor: pointer;
+`;
+
+const Arrow = styled(motion.div)`
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  margin: 0.5rem 0;
 `;

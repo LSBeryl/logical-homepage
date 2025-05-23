@@ -11,6 +11,7 @@ import { theme } from "../../styles/theme";
 import { useEffect, useRef, useState } from "react";
 import { useBackground } from "../../context/BackgroundContext";
 import reviews from "../../data/reviews";
+import { motion } from "framer-motion";
 
 export default function Sector2() {
   const wrapperRef = useRef();
@@ -94,6 +95,16 @@ export default function Sector2() {
 
     return () => observer.disconnect();
   }, [row1Ref.current, row2Ref.current, row3Ref.current]);
+
+  function scrollToSector3() {
+    window.scrollTo({
+      top:
+        document.getElementById("sector-3").offsetTop +
+        window.innerHeight -
+        150,
+      behavior: "smooth",
+    });
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -208,6 +219,20 @@ export default function Sector2() {
             </ScrollContent>
           </ScrollRow>
         </ScrollSection>
+        <Scroll onClick={scrollToSector3}>
+          <Arrow
+            animate={{
+              y: [0, 10, 0],
+              rotate: [45, 45, 45],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          로지컬수학의 커리큘럼은?
+        </Scroll>
       </Wrapper>
     </ThemeProvider>
   );
@@ -350,4 +375,23 @@ const Thumbnail = styled.img`
   height: 5rem;
   border-radius: 0.5rem;
   object-fit: cover;
+`;
+
+const Scroll = styled.div`
+  margin: 5vh 0 10vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+`;
+
+const Arrow = styled(motion.div)`
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  margin: 0.5rem 0;
 `;

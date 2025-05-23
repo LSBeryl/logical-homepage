@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import { useBackground } from "../../context/BackgroundContext";
 import { useEffect, useRef } from "react";
 import people from "../../data/people";
+import { motion } from "framer-motion";
 
 /**
  * 명예의 전당 - Sector #4
@@ -27,6 +28,16 @@ export default function Sector4() {
   }, []);
 
   const title = "명예의 전당";
+
+  function scrollToSector5() {
+    window.scrollTo({
+      top:
+        document.getElementById("sector-5").offsetTop +
+        window.innerHeight -
+        150,
+      behavior: "smooth",
+    });
+  }
 
   return (
     <Wrapper ref={wrapperRef} id="sector-4">
@@ -76,6 +87,20 @@ export default function Sector4() {
           </Person>
         ))}
       </People>
+      <Scroll onClick={scrollToSector5}>
+        <Arrow
+          animate={{
+            y: [0, 10, 0],
+            rotate: [45, 45, 45],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        상담 신청하기
+      </Scroll>
     </Wrapper>
   );
 }
@@ -214,4 +239,23 @@ const People = styled.div`
     column-gap: 1rem;
     row-gap: 2rem;
   }
+`;
+
+const Scroll = styled.div`
+  margin: 5vh 0 10vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+`;
+
+const Arrow = styled(motion.div)`
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  margin: 0.5rem 0;
 `;
