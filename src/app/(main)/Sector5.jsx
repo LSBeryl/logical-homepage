@@ -408,7 +408,7 @@ const FormTitle = styled.div`
 
   @media (max-width: 900px) {
     font-size: 1.2rem;
-    padding: 0 1rem !important;
+    padding: 0 1rem 0 0 !important;
   }
 `;
 
