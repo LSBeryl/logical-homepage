@@ -22,11 +22,12 @@ export default function Main() {
   const conRef = useRef();
 
   useEffect(() => {
-    console.log(curSector);
+    if (curSector === 1) {
+      setSector(1);
+    }
   }, [curSector]);
 
   useEffect(() => {
-    console.log(curSector);
     setCurBackColor(() => {
       if (curSector === 1) {
         return theme.colors.background.highlight;
@@ -37,9 +38,9 @@ export default function Main() {
       } else if (curSector === 4) {
         return "#121212";
       } else if (curSector === 5) {
-        return theme.colors.background.extralight;
+        return "#fff";
       } else if (curSector === 6) {
-        return "#FFFFFF";
+        return "#fff";
       } else {
         return theme.colors.background.default;
       }

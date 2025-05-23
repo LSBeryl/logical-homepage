@@ -28,6 +28,7 @@ export default function Sector6() {
     window.addEventListener("scroll", scrollHandler);
     return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
+
   useEffect(() => {
     // 다른 경로로 나갔다가 올 시 지도 사라지는 이슈 방지용 useEffect
     const scriptId = "naver-map-script";

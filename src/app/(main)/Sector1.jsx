@@ -66,7 +66,6 @@ export default function Sector1() {
                         }
                       })
                       .catch((err) => {
-                        console.log(err);
                         setImageExists(false);
                       });
                   }, [imgSrc]);

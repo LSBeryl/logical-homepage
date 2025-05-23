@@ -22,7 +22,6 @@ export default function SectorMenu({ curSector, setSector }) {
           : targetSector.offsetTop + vh - 150;
       window.scrollTo({
         top: offset,
-        behavior: "smooth",
       });
 
       // 스크롤이 완료된 후 섹터 변경
