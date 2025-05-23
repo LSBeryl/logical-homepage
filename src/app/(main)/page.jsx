@@ -73,6 +73,15 @@ export default function Main() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  function scrollToSector5() {
+    window.scrollTo({
+      top:
+        document.getElementById("sector-5").offsetTop +
+        window.innerHeight -
+        150,
+    });
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Sector0 />
@@ -91,7 +100,9 @@ export default function Main() {
         <Sector6 />
       </SectorCon>
 
-      <GoConsult ref={consultRef}>무료 상담 신청하기</GoConsult>
+      <GoConsult ref={consultRef} onClick={scrollToSector5}>
+        무료 상담 신청하기
+      </GoConsult>
     </ThemeProvider>
   );
 }
