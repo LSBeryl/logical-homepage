@@ -18,6 +18,7 @@ export default function Sector5() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("high");
   const dropdownRef = useRef(null);
+  const gradeDropdownRef = useRef(null);
 
   // Form states
   const [schoolType, setSchoolType] = useState("high");
@@ -60,6 +61,12 @@ export default function Sector5() {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsOpen(false);
       }
+      if (
+        gradeDropdownRef.current &&
+        !gradeDropdownRef.current.contains(event.target)
+      ) {
+        setIsGradeOpen(false);
+      }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -100,7 +107,10 @@ export default function Sector5() {
         return;
       }
 
-      alert("상담 신청이 완료되었습니다.");
+      alert(
+        "상담 신청이 완료되었습니다.\n작성하신 연락처로 연락이 갈 예정이니, 참고 부탁드립니다."
+      );
+      window.location.href = "/";
 
       // 폼 초기화
       setSchoolType("high");
@@ -129,10 +139,7 @@ export default function Sector5() {
 
   return (
     <Wrapper ref={wrapperRef} id="sector-5">
-      {/* <button onClick={getSchool}>버튼입니다</button> */}
-      <Title className={curSector === 5 ? "visible" : ""}>
-        이제, 로지컬수학에서 진짜 실력 향상을 느껴보세요.
-      </Title>
+      <Title>이제, 로지컬수학에서 진짜 실력 향상을 느껴보세요.</Title>
       <SubTitle>
         <span>로지컬 수학학원</span> 상담 신청
       </SubTitle>
@@ -141,7 +148,12 @@ export default function Sector5() {
           <FormTitle>학교</FormTitle>
           <FormInputCon>
             <CustomSelect ref={dropdownRef}>
-              <SelectButton onClick={() => setIsOpen(!isOpen)}>
+              <SelectButton
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  setIsGradeOpen(false);
+                }}
+              >
                 {options.find((opt) => opt.value === schoolType)?.label}
                 <FaChevronDown />
               </SelectButton>
@@ -173,8 +185,13 @@ export default function Sector5() {
         <FormRow>
           <FormTitle>학년</FormTitle>
           <FormInputCon>
-            <CustomSelect>
-              <SelectButton onClick={() => setIsGradeOpen(!isGradeOpen)}>
+            <CustomSelect ref={gradeDropdownRef}>
+              <SelectButton
+                onClick={() => {
+                  setIsGradeOpen(!isGradeOpen);
+                  setIsOpen(false);
+                }}
+              >
                 {gradeOptions.find((opt) => opt.value === grade)?.label ||
                   "학년을 선택해주세요"}
                 <FaChevronDown />
@@ -267,7 +284,7 @@ export default function Sector5() {
             이용에 대한 동의를 얻고자 합니다.
           </div>
           <div>
-            <div>① 수집 항목 : 재학 중인 학교명, 이름, 연락처</div>
+            <div>① 수집 항목 : 재학 중인 학교명, 학년, 이름, 연락처</div>
             <div>② 수집 및 이용 목적 : 학원 상담 일정 조정을 위한 연락</div>
             <div>③ 보유 기간 : 목적 달성 후 즉시 파기</div>
           </div>
@@ -325,24 +342,12 @@ const Title = styled.div`
   box-sizing: border-box;
   width: 100%;
   line-height: 1.5;
-
-  background: #121212;
-  color: #121212;
-  opacity: 0;
-  transform: translateY(100px);
-
-  transition: all 1s ease;
-
-  &.visible {
-    opacity: 1;
-    background: linear-gradient(
-      90deg,
-      ${({ theme }) => theme.colors.primary},
-      #2d52a8
-    );
-    color: #fff;
-    transform: translateY(0);
-  }
+  background: linear-gradient(
+    90deg,
+    ${({ theme }) => theme.colors.primary},
+    #2d52a8
+  );
+  color: #fff;
 
   @media (max-width: 900px) {
     padding: 2rem 1rem;

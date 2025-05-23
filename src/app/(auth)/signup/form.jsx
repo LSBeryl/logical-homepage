@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import Type from "./type";
 import supabase from "../../../supabase-client";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function Form({ type, setType }) {
   const [isTermAgreed, setIsTermAgreed] = useState(false);
@@ -247,6 +249,10 @@ export default function Form({ type, setType }) {
     <ThemeProvider theme={theme}>
       {type ? (
         <Wrapper>
+          <HomeButton onClick={() => router.push("/")}>
+            <FaArrowLeft />
+            홈으로
+          </HomeButton>
           <div>
             <Title>회원가입</Title>
             <SemiTitle>개인정보 수집 및 이용 동의</SemiTitle>
@@ -413,7 +419,7 @@ const Wrapper = styled.div`
   align-items: center;
   box-sizing: border-box;
   gap: 3rem;
-  padding: 5rem 0;
+  padding: 2rem 0;
   & > div {
     width: 50%;
     display: flex;
@@ -558,5 +564,29 @@ const SubmitCon = styled.div`
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9rem;
+  }
+`;
+
+const HomeButton = styled.div`
+  /* position: absolute;
+  top: 2rem;
+  left: 50%; */
+  /* transform: translateX(-50%); */
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row !important;
+  gap: 0.3rem;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.lightPrimary};
+    background: rgba(255, 255, 255, 1);
   }
 `;

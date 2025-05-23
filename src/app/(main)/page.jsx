@@ -51,13 +51,6 @@ export default function Main() {
     const handleScroll = () => {
       if (consultRef.current) {
         const rect = consultRef.current.getBoundingClientRect();
-        console.log("Consult button position:", {
-          top: rect.top,
-          bottom: rect.bottom,
-          windowHeight: window.innerHeight,
-          bojeong: window.innerHeight + 150,
-          scrollY: window.scrollY,
-        });
         if (
           window.scrollY > window.innerHeight + 150 &&
           window.scrollY <
@@ -74,12 +67,18 @@ export default function Main() {
   }, []);
 
   function scrollToSector5() {
-    window.scrollTo({
-      top:
-        document.getElementById("sector-5").offsetTop +
-        window.innerHeight -
-        150,
-    });
+    if (
+      window.scrollY > window.innerHeight + 150 &&
+      window.scrollY <
+        document.getElementById("sector-5").offsetTop - window.innerHeight
+    ) {
+      window.scrollTo({
+        top:
+          document.getElementById("sector-5").offsetTop +
+          window.innerHeight -
+          150,
+      });
+    }
   }
 
   return (
@@ -126,14 +125,15 @@ const GoConsult = styled.div`
   text-align: center;
   font-size: 2rem;
   font-weight: 800;
-  cursor: pointer;
   border-radius: 1rem;
   z-index: 100;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   transition: opacity 0.5s ease;
   opacity: 0;
+  cursor: default;
 
   &.visible {
+    cursor: pointer;
     opacity: 1;
   }
 

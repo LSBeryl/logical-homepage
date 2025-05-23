@@ -205,14 +205,15 @@ const Label = styled.div`
 `;
 
 const HomeButton = styled.div`
-  position: absolute;
+  /* position: absolute;
   top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 50%; */
+  /* transform: translateX(-50%); */
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.9rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.3rem;
   transition: all 0.2s ease;
   padding: 0.5rem 1rem;
