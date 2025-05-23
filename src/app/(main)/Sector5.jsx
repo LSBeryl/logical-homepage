@@ -324,6 +324,7 @@ const Title = styled.div`
   color: #fff;
   box-sizing: border-box;
   width: 100%;
+  line-height: 1.5;
 
   background: #121212;
   color: #121212;
