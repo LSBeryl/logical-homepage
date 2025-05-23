@@ -136,7 +136,6 @@ export default function Sector5() {
       <SubTitle>
         <span>로지컬 수학학원</span> 상담 신청
       </SubTitle>
-      {/* <SubSubTitle>로지컬 수학과 함께라면 (뭐라고 쓸까)</SubSubTitle> */}
       <FormCon>
         <FormRow>
           <FormTitle>학교</FormTitle>
@@ -312,8 +311,9 @@ export default function Sector5() {
 }
 
 const Wrapper = styled.div`
-  max-width: 100vw;
+  width: 100%;
   padding: 100vh 0 8rem 0;
+  box-sizing: border-box;
 `;
 
 const Title = styled.div`
@@ -322,6 +322,8 @@ const Title = styled.div`
   font-size: 2rem;
   font-weight: 700;
   color: #fff;
+  box-sizing: border-box;
+  width: 100%;
 
   background: #121212;
   color: #121212;
@@ -340,6 +342,10 @@ const Title = styled.div`
     color: #fff;
     transform: translateY(0);
   }
+
+  @media (max-width: 900px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 const SubTitle = styled.div`
@@ -356,18 +362,16 @@ const SubTitle = styled.div`
   }
 `;
 
-const SubSubTitle = styled.div`
-  text-align: center;
-  font-weight: 600;
-  margin-bottom: 1rem;
-`;
-
 const FormCon = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   margin-top: 2rem;
+
+  @media (max-width: 900px) {
+    gap: 2rem;
+  }
 `;
 
 const FormRow = styled.div`
@@ -390,7 +394,7 @@ const FormRow = styled.div`
     gap: 0.5rem;
 
     & > div {
-      padding: 0.2rem 1rem;
+      width: 100%;
     }
   }
 `;
@@ -399,6 +403,7 @@ const FormTitle = styled.div`
   display: flex;
   align-items: center;
   font-weight: 600;
+  box-sizing: border-box;
 
   @media (max-width: 900px) {
     font-size: 1.2rem;
@@ -423,6 +428,19 @@ const FormInputCon = styled.div`
 
     &:focus {
       border-color: ${({ theme }) => theme.colors.primary};
+    }
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    width: 100%;
+
+    & > input[type="text"] {
+      width: 100%;
+    }
+
+    & > div {
+      width: 100%;
     }
   }
 `;

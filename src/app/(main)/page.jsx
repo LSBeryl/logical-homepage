@@ -128,5 +128,6 @@ const GoConsult = styled.div`
 
   @media (max-width: 900px) {
     width: 90vw;
+    font-size: 1rem;
   }
 `;
