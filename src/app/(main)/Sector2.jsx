@@ -98,10 +98,7 @@ export default function Sector2() {
 
   function scrollToSector3() {
     window.scrollTo({
-      top:
-        document.getElementById("sector-3").offsetTop +
-        window.innerHeight -
-        150,
+      top: document.getElementById("sector-3").offsetTop + 100,
       behavior: "smooth",
     });
   }
@@ -239,7 +236,9 @@ export default function Sector2() {
 }
 
 const Wrapper = styled.div`
-  padding: 100vh 0 8rem 0;
+  width: 100%;
+  padding: 100rem 0 8rem 0;
+  box-sizing: border-box;
   overflow: hidden;
 
   &.visible * {

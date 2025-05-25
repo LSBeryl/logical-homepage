@@ -39,10 +39,7 @@ export default function Sector1() {
 
   function scrollToSector2() {
     window.scrollTo({
-      top:
-        document.getElementById("sector-2").offsetTop +
-        window.innerHeight -
-        150,
+      top: document.getElementById("sector-2").offsetTop + 100,
       behavior: "smooth",
     });
   }
@@ -163,6 +160,8 @@ export default function Sector1() {
 // 기본 스타일들
 const Wrapper = styled.div`
   max-width: 100vw;
+  padding: 0 0 8rem 0;
+  box-sizing: border-box;
 `;
 
 const BigBox = styled(motion.div)`
@@ -188,7 +187,9 @@ const Box = styled.div`
   padding: 3rem 5rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
+
+  background-color: ${({ theme }) => theme.colors.lightPrimary};
 
   &.visible {
     opacity: 1;
@@ -197,6 +198,8 @@ const Box = styled.div`
   @media (max-width: 900px) {
     gap: 1rem;
     padding: 1.5rem;
+    background-color: ${({ theme }) => theme.colors.primaryBlur};
+    box-shadow: 0 0 10px 0 ${({ theme }) => theme.colors.primaryBlur};
   }
 `;
 
@@ -246,11 +249,14 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
 
   @media (max-width: 900px) {
     width: 60vw;
     height: 65vw;
+  }
+
+  @media (min-width: 900px) {
+    z-index: 1;
   }
 `;
 

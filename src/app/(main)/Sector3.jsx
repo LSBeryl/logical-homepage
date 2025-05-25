@@ -43,10 +43,7 @@ export default function Sector3() {
 
   function scrollToSector4() {
     window.scrollTo({
-      top:
-        document.getElementById("sector-4").offsetTop +
-        window.innerHeight -
-        150,
+      top: document.getElementById("sector-4").offsetTop + 100,
       behavior: "smooth",
     });
   }
@@ -251,8 +248,9 @@ export default function Sector3() {
 }
 
 const Wrapper = styled.div`
-  max-width: 100vw;
-  padding: 100vh 0 8rem 0;
+  width: 100%;
+  padding: 100rem 0 8rem 0;
+  box-sizing: border-box;
 `;
 
 const StickyCon = styled.div`

@@ -1,8 +1,9 @@
 export const theme = {
   colors: {
     primary: "#082870",
-    primaryBlur: "#08287077",
+    primaryBlur: "#082870ee",
     lightPrimary: "#1a3d92",
+    lightPrimaryBlur: "#1a3d92ee",
     background: {
       default: "#082870", // 기본 배경색 (파란색 계열)
       highlight: "#1a3d92", // 강조 배경색 (밝은 파란색)

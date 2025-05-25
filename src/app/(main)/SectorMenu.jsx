@@ -18,8 +18,10 @@ export default function SectorMenu({ curSector, setSector }) {
       const vh = window.innerHeight;
       const offset =
         index == 0
-          ? targetSector.offsetTop + vh + 100
-          : targetSector.offsetTop + vh - 150;
+          ? targetSector.offsetTop + 60 * 16
+          : index == 5
+          ? targetSector.offsetTop + 40 * 16
+          : targetSector.offsetTop + 90 * 16;
       window.scrollTo({
         top: offset,
       });
@@ -47,6 +49,7 @@ export default function SectorMenu({ curSector, setSector }) {
             }}
             style={{
               borderBottom: curSector - 1 === i && "3px solid #082870",
+              color: curSector - 1 === i && "#082870",
               pointerEvents: isScrolling ? "none" : "auto",
             }}
           >
@@ -82,9 +85,9 @@ const Wrapper = styled.div`
 `;
 
 const SectorMenuLink = styled(Link)`
+  height: 100%;
   color: #000;
   text-decoration: none;
-  height: 100%;
   display: flex;
   align-items: center;
   flex-shrink: 0;

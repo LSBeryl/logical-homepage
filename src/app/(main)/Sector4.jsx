@@ -31,10 +31,7 @@ export default function Sector4() {
 
   function scrollToSector5() {
     window.scrollTo({
-      top:
-        document.getElementById("sector-5").offsetTop +
-        window.innerHeight -
-        150,
+      top: document.getElementById("sector-5").offsetTop + 100,
       behavior: "smooth",
     });
   }
@@ -106,8 +103,9 @@ export default function Sector4() {
 }
 
 const Wrapper = styled.div`
-  max-width: 100vw;
-  padding: 100vh 0 8rem 0;
+  width: 100%;
+  padding: 100rem 0 8rem 0;
+  box-sizing: border-box;
   background: radial-gradient(
     circle at center 45%,
     #fbe18f66 0%,

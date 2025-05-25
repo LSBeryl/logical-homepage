@@ -199,12 +199,13 @@ const BigBox = styled.div`
 `;
 
 const Scroll = styled.div`
-  margin: 5vh 0 10vh 0;
+  margin: 5rem 0 10rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  font-weight: 500;
+  font-weight: 600;
+  cursor: pointer;
 `;
 
 const Arrow = styled(motion.div)`
@@ -213,4 +214,36 @@ const Arrow = styled(motion.div)`
   border-right: 2px solid #000;
   border-bottom: 2px solid #000;
   margin: 0.5rem 0;
+`;
+
+const ImageCon = styled.div`
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+`;
+
+const Title = styled.div`
+  margin: 7rem 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+`;
+
+const Content = styled.div`
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+`;
+
+const SubTitle = styled.div`
+  margin: 0 0 20rem 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
 `;

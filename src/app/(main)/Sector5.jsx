@@ -129,10 +129,7 @@ export default function Sector5() {
 
   function scrollToSector6() {
     window.scrollTo({
-      top:
-        document.getElementById("sector-6").offsetTop +
-        window.innerHeight -
-        150,
+      top: document.getElementById("sector-6").offsetTop + 100,
       behavior: "smooth",
     });
   }
@@ -329,7 +326,7 @@ export default function Sector5() {
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 100vh 0 8rem 0;
+  padding: 100rem 0 8rem 0;
   box-sizing: border-box;
 `;
 

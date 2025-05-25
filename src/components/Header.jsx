@@ -97,6 +97,7 @@ const LogoCon = styled(Link)`
   height: 4.5rem;
   display: flex;
   align-items: center;
+  overflow-y: hidden;
   & > img {
     height: 160%;
     cursor: pointer;
