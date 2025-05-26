@@ -53,5 +53,5 @@ export default function DashboardRedirect() {
     checkAuthAndRedirect();
   }, [router]);
 
-  return null;
+  return <div>대시보드로 이동 중입니다.</div>;
 }
