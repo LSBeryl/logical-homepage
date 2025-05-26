@@ -351,6 +351,10 @@ const NeedCard = styled.div`
   align-items: center;
   text-align: center;
 
+  @media (max-width: 1200px) {
+    width: 40rem;
+  }
+
   @media (max-width: 900px) {
     width: 90%;
     padding: 2rem 1.5rem;
