@@ -43,7 +43,7 @@ export default function Sector3() {
 
   function scrollToSector4() {
     window.scrollTo({
-      top: document.getElementById("sector-4").offsetTop + 100,
+      top: document.getElementById("sector-4").offsetTop + 90 * 16,
       behavior: "smooth",
     });
   }
@@ -256,7 +256,6 @@ const Wrapper = styled.div`
 const StickyCon = styled.div`
   position: sticky;
   top: 10rem;
-  /* height: 150vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -301,12 +300,12 @@ const Timeline = styled.div`
 
 const VerticalLine = styled.div`
   width: 3px;
-  height: 10vh;
+  height: 10rem;
   background-color: #fff;
   z-index: 0;
 
   @media (max-width: 900px) {
-    height: 8vh;
+    height: 8rem;
   }
 `;
 
@@ -422,7 +421,7 @@ const Tag = styled.span`
 `;
 
 const Scroll = styled.div`
-  margin: 5vh 0 10vh 0;
+  margin: 5rem 0 10rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;

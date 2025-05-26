@@ -39,7 +39,7 @@ export default function Sector1() {
 
   function scrollToSector2() {
     window.scrollTo({
-      top: document.getElementById("sector-2").offsetTop + 100,
+      top: document.getElementById("sector-2").offsetTop + 90 * 16,
       behavior: "smooth",
     });
   }
@@ -188,18 +188,21 @@ const Box = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3rem;
-
   background-color: ${({ theme }) => theme.colors.lightPrimary};
+  /* width: 100%;
+  box-sizing: border-box;
+  will-change: transform; */
 
   &.visible {
     opacity: 1;
   }
 
   @media (max-width: 900px) {
+    position: static;
+    opacity: 1;
     gap: 1rem;
-    padding: 1.5rem;
-    background-color: ${({ theme }) => theme.colors.primaryBlur};
-    box-shadow: 0 0 10px 0 ${({ theme }) => theme.colors.primaryBlur};
+    padding: 5rem 2rem;
+    transform: none !important;
   }
 `;
 
@@ -209,13 +212,13 @@ const Title = styled.div`
   color: #fff;
 
   @media (max-width: 900px) {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 `;
 
 const Desc = styled.div`
   color: #fff;
-  width: 30vw;
+  width: 30rem;
   line-height: 1.5rem;
   font-weight: 100;
 
@@ -232,17 +235,22 @@ const DummyCardCon = styled.div`
   flex-direction: column;
   gap: 1rem;
   align-items: flex-end;
-  padding: 100vh 20vw;
+  padding: 50rem 20rem;
   box-sizing: border-box;
+  position: relative;
+  will-change: transform;
 
   @media (max-width: 900px) {
     align-items: center;
+    padding: 1rem 1rem;
+    margin-bottom: 30rem;
+    transform: none;
   }
 `;
 
 const ImageContainer = styled.div`
-  width: 20vw;
-  height: 25vw;
+  width: 20rem;
+  height: 25rem;
   background-color: #ffffff;
   border-radius: 1rem;
   overflow: hidden;
@@ -251,8 +259,9 @@ const ImageContainer = styled.div`
   justify-content: center;
 
   @media (max-width: 900px) {
-    width: 60vw;
-    height: 65vw;
+    width: 90%;
+    height: 25rem;
+    max-width: 20rem;
   }
 
   @media (min-width: 900px) {
@@ -268,13 +277,12 @@ const StyledImage = styled.img`
 `;
 
 const Gap = styled.div`
-  padding: 50vh 0;
+  padding: 10rem 0;
 `;
 
 // 💡 Needs Section 스타일
 const NeedsSection = styled.div`
-  padding: 5rem 10vw;
-  /* background: #121212; */
+  padding: 5rem 10rem;
   color: white;
 
   @media (max-width: 900px) {
@@ -297,19 +305,17 @@ const NeedsConTitle = styled.h2`
 `;
 
 const Students = styled.span`
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem;
   border-radius: 0.2rem;
-  margin: 0 0.5rem;
+  margin: 0 0.2rem;
   background: linear-gradient(to right, #fff 50%, #1a3d92 50%);
   background-position: 100% 0;
   background-size: 200% 100%;
-  /* color: #fff; */
   overflow: hidden;
 
   @keyframes slideBackgroundNeeds {
     from {
       background-position: 100% 0;
-      /* color: #fff; */
     }
     to {
       background-position: 0 0;
@@ -326,13 +332,13 @@ const NeedsCon = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5rem; /* 카드 사이 간격을 크게 줘서 한 장씩 넘기는 느낌 */
+  gap: 5rem;
 `;
 
 const NeedCard = styled.div`
-  width: 60vw;
+  width: 60rem;
   box-sizing: border-box;
-  min-height: 40vh;
+  height: 25rem;
   background: #ffffff10;
   border: 1px solid #ffffff22;
   border-radius: 2rem;
@@ -346,8 +352,15 @@ const NeedCard = styled.div`
   text-align: center;
 
   @media (max-width: 900px) {
-    width: 90vw;
+    width: 90%;
     padding: 2rem 1.5rem;
+    height: 20rem;
+  }
+
+  @media (max-width: 500px) {
+    &:not(:nth-of-type(2)) {
+      height: 16rem;
+    }
   }
 `;
 
@@ -356,6 +369,10 @@ const NeedTitle = styled.div`
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
   font-weight: 600;
+
+  @media (max-width: 500px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const NeedText = styled.div`
@@ -367,6 +384,10 @@ const NeedText = styled.div`
   @media (max-width: 900px) {
     font-size: 1.4rem;
   }
+
+  @media (max-width: 500px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const AnswerText = styled.div`
@@ -376,6 +397,11 @@ const AnswerText = styled.div`
 
   @media (max-width: 900px) {
     font-size: 0.95rem;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
 `;
 
@@ -398,7 +424,7 @@ const Annotation = styled.div`
 `;
 
 const Scroll = styled.div`
-  margin: 5vh 0 10vh 0;
+  margin: 5rem 0 10rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;

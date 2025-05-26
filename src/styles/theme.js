@@ -6,6 +6,7 @@ export const theme = {
     lightPrimaryBlur: "#1a3d92ee",
     background: {
       default: "#082870", // 기본 배경색 (파란색 계열)
+      blur: "#3a5cb022", // 기본 배경색 엄청 블러
       highlight: "#1a3d92", // 강조 배경색 (밝은 파란색)
       extralight: "#eef5fd",
       accent: "#ffd700", // 강조색 (노란색)
@@ -13,6 +14,7 @@ export const theme = {
     },
     text: {
       primary: "#ffffff", // 기본 텍스트 색상
+      blackPrimary: "#01174a", //rgb(1, 23, 74)
       secondary: "#e0e0e0", // 보조 텍스트 색상
       black: "#000000", // 검은색 텍스트
       gray: "#7e7e7e", // 회색 텍스트

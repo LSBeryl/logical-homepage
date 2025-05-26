@@ -98,7 +98,7 @@ export default function Sector2() {
 
   function scrollToSector3() {
     window.scrollTo({
-      top: document.getElementById("sector-3").offsetTop + 100,
+      top: document.getElementById("sector-3").offsetTop + 90 * 16,
       behavior: "smooth",
     });
   }
@@ -377,7 +377,7 @@ const Thumbnail = styled.img`
 `;
 
 const Scroll = styled.div`
-  margin: 5vh 0 10vh 0;
+  margin: 5rem 0 10rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;

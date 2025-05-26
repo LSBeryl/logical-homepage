@@ -8,29 +8,25 @@ import { theme } from "../../styles/theme";
 import { useRef, useEffect, useState } from "react";
 
 export default function SectorMenu({ curSector, setSector }) {
-  const sectorRefs = useRef([]);
   const [isScrolling, setIsScrolling] = useState(false);
 
   const scrollToSector = (index) => {
     setIsScrolling(true);
     const targetSector = document.querySelector(`#sector-${index + 1}`);
     if (targetSector) {
-      const vh = window.innerHeight;
       const offset =
         index == 0
           ? targetSector.offsetTop + 60 * 16
-          : index == 5
-          ? targetSector.offsetTop + 40 * 16
           : targetSector.offsetTop + 90 * 16;
-      window.scrollTo({
-        top: offset,
-      });
 
-      // 스크롤이 완료된 후 섹터 변경
+      setSector(index + 1);
+      setIsScrolling(false);
+
       setTimeout(() => {
-        setSector(index + 1);
-        setIsScrolling(false);
-      }, 1000); // 스크롤 애니메이션 시간보다 약간 더 긴 시간
+        window.scrollTo({
+          top: offset,
+        });
+      }, 100);
     }
   };
 

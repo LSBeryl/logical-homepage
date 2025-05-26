@@ -123,6 +123,7 @@ const Box = styled(Link)`
   color: #fff;
   text-decoration: none;
 
+  box-sizing: border-box;
   transition: all 0.2s ease;
 
   & > img {
@@ -156,6 +157,7 @@ const Box = styled(Link)`
   @media (max-width: 900px) {
     border-radius: 0;
     font-size: 1.3rem;
+    width: 50%;
   }
 
   @media (min-width: 900px) {
@@ -214,36 +216,4 @@ const Arrow = styled(motion.div)`
   border-right: 2px solid #000;
   border-bottom: 2px solid #000;
   margin: 0.5rem 0;
-`;
-
-const ImageCon = styled.div`
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-`;
-
-const Title = styled.div`
-  margin: 7rem 0;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-`;
-
-const Content = styled.div`
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-`;
-
-const SubTitle = styled.div`
-  margin: 0 0 20rem 0;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
 `;

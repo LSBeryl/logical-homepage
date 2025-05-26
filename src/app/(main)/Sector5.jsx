@@ -129,7 +129,7 @@ export default function Sector5() {
 
   function scrollToSector6() {
     window.scrollTo({
-      top: document.getElementById("sector-6").offsetTop + 100,
+      top: document.getElementById("sector-6").offsetTop + 40 * 16,
       behavior: "smooth",
     });
   }
@@ -635,7 +635,7 @@ const SubmitButton = styled.div`
 `;
 
 const Scroll = styled.div`
-  margin: 5vh 0 10vh 0;
+  margin: 5rem 0 10rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;

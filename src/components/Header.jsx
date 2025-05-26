@@ -14,6 +14,8 @@ export default function Header() {
   const [isUserExist, setIsUserExist] = useState(false);
   const [user, setUser] = useState({});
 
+  const router = useRouter();
+
   const roleToKor = {
     student: "학생",
     parents: "학부모",
@@ -76,7 +78,9 @@ export default function Header() {
             </Welcome>
           )}
           {isUserExist && (
-            <Dashboard>{roleToKor[user.role]} 대시보드</Dashboard>
+            <Dashboard onClick={() => router.push("/dashboard")}>
+              {roleToKor[user.role]} 대시보드
+            </Dashboard>
           )}
           <Sign>
             {user?.sub ? (

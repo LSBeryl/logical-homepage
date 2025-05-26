@@ -73,10 +73,7 @@ export default function Main() {
         document.getElementById("sector-5").offsetTop - window.innerHeight
     ) {
       window.scrollTo({
-        top:
-          document.getElementById("sector-5").offsetTop +
-          window.innerHeight -
-          150,
+        top: document.getElementById("sector-5").offsetTop + 90 * 16,
       });
     }
   }
