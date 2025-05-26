@@ -3,8 +3,9 @@
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import supabase from "../../../supabase-client";
+import styled from "@emotion/styled";
 
-export default function DashboardRedirect() {
+export default function DashboardRedirect({ searchParams }) {
   const router = useRouter();
 
   useEffect(() => {
@@ -50,8 +51,25 @@ export default function DashboardRedirect() {
       }
     }
 
-    checkAuthAndRedirect();
+    async function getParams() {
+      const { type } = await searchParams;
+      if (type !== "test") checkAuthAndRedirect();
+    }
+
+    getParams();
   }, [router]);
 
-  return <div>대시보드로 이동 중입니다.</div>;
+  return <Text>대시보드로 이동 중입니다.</Text>;
 }
+
+const Text = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem;
+  box-sizing: border-box;
+`;
